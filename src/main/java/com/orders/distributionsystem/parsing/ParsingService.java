@@ -6,7 +6,7 @@ public class ParsingService {
 
 
     public boolean processOrderFile(String fileAbsolutePath){
-            ProcessInputOrderFileService inputProcessor = new ProcessInputOrderFileService();
+            InputProcessor inputProcessor = new ProcessInputOrderFileService();
 
             try {
                 inputProcessor.setFile(fileAbsolutePath);

@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ProcessInputOrderFileService {
+public class ProcessInputOrderFileService implements InputProcessor{
     private File inputFile;
     private String uniqueFileIdentifier;
 
