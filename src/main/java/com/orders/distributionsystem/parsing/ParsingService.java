@@ -16,7 +16,7 @@ public class ParsingService {
 
             var suppliersProducts = inputProcessor.getProductsForSuppliers();
 
-            OutputProductsForSuppliersService outputProcessor = new OutputProductsForSuppliersService(inputProcessor.getInputUniqueIdentifier());
+            OutputProcessor outputProcessor = new OutputProductsForSuppliersService(inputProcessor.getInputUniqueIdentifier());
             outputProcessor.exportProductsForSuppliers(suppliersProducts);
 
             return true;

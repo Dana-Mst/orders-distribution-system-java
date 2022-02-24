@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-public class OutputProductsForSuppliersService {
+public class OutputProductsForSuppliersService implements OutputProcessor {
     private String uniqueIdentifier;
 
     public OutputProductsForSuppliersService(String uniqueIdentifier) {
