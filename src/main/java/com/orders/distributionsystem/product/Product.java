@@ -1,10 +1,7 @@
 package com.orders.distributionsystem.product;
 
-import lombok.ToString;
-
 import javax.xml.bind.annotation.XmlElement;
 
-@ToString
 public class Product {
 
     private String description;
@@ -62,5 +59,16 @@ public class Product {
 
     public void setOrderId(String orderId) {
         this.orderId = orderId;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "description='" + description + '\'' +
+                ", gtin='" + gtin + '\'' +
+                ", price=" + price +
+                ", supplier='" + supplier + '\'' +
+                ", orderId='" + orderId + '\'' +
+                '}';
     }
 }

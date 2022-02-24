@@ -1,15 +1,12 @@
 package com.orders.distributionsystem.watcher;
 
 import com.orders.distributionsystem.parsing.ParsingService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.*;
 
 
-@Service
 public class WatcherService {
 
     private final ParsingService parsingService;
@@ -48,7 +45,7 @@ public class WatcherService {
         }
     }
 
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) throws IOException {
         WatcherService ws = new WatcherService();
         ws.startWatching("orderFiles");
     }

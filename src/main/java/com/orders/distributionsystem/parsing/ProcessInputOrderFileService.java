@@ -4,7 +4,6 @@ import com.orders.distributionsystem.order.Order;
 import com.orders.distributionsystem.order.OrdersRootElement;
 import com.orders.distributionsystem.product.Product;
 import com.orders.distributionsystem.product.ProductOutput;
-import org.springframework.stereotype.Service;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
@@ -15,7 +14,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Service
 public class ProcessInputOrderFileService {
     private File inputFile;
     private String uniqueFileIdentifier;
