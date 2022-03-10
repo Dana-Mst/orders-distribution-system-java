@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 public class OutputProductsForSuppliersService implements OutputProcessor {
-    private String uniqueIdentifier;
+    private final String uniqueIdentifier;
 
     public OutputProductsForSuppliersService(String uniqueIdentifier) {
         this.uniqueIdentifier = uniqueIdentifier;
@@ -36,7 +36,6 @@ public class OutputProductsForSuppliersService implements OutputProcessor {
         File outputSupplierFile = new File("exported/" + supplier, outputFileSupplier);
         if (outputSupplierFile.exists()){
             throw new IOException ("Supplier location file already exists");
-
         }
         outputSupplierFile.getParentFile().mkdirs();
 

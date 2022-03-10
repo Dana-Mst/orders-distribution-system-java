@@ -15,17 +15,16 @@ import java.util.List;
 import java.util.Map;
 
 public class ProcessInputOrderFileService implements InputProcessor{
-    private File inputFile;
-    private String uniqueFileIdentifier;
+    private final File inputFile;
+    private final String uniqueFileIdentifier;
 
     private static final int ORDER_START_NUMBER_INDEX = 6;
     private static final String ONLY_DIGITS_REGEX = "[0-9]+";
     private static final String ORDER_SEPARATOR = "\\.";
     private static final String XML_EXTENSION = "xml";
 
-
-    public void setFile(String inputFilePath) throws IOException {
-        inputFile = new File(inputFilePath);
+    public ProcessInputOrderFileService(String inputFilePath) throws IOException {
+        this.inputFile = new File(inputFilePath);
         if (!inputFile.exists()) {
             throw new IOException("File doesn't exists");
         }
@@ -33,8 +32,7 @@ public class ProcessInputOrderFileService implements InputProcessor{
         if (!validateOrderFileName(inputFile.getName())) {
             throw new IOException("Unsupported file naming");
         }
-
-        uniqueFileIdentifier = parseUniqueIdentifier(inputFile.getName());
+        this.uniqueFileIdentifier = parseUniqueIdentifier(inputFile.getName());
     }
 
     public Map<String, List<ProductOutput>> getProductsForSuppliers() {
@@ -94,6 +92,7 @@ public class ProcessInputOrderFileService implements InputProcessor{
 
         return fileExtension.equals(XML_EXTENSION) && fileHasCorrectStructure;
     }
+
     private static String parseUniqueIdentifier(String fileName){
         var splittedFile = fileName.split(ORDER_SEPARATOR);
         var fileWithoutExtension = splittedFile[0];
