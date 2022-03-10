@@ -5,14 +5,9 @@ import java.io.IOException;
 public class ParsingService {
 
 
-    public boolean processOrderFile(String fileAbsolutePath){
-            InputProcessor inputProcessor = new ProcessInputOrderFileService();
+    public boolean processOrderFile(String fileAbsolutePath) throws IOException {
 
-            try {
-                inputProcessor.setFile(fileAbsolutePath);
-            }catch (IOException e){
-                return false;
-            }
+            InputProcessor inputProcessor = new ProcessInputOrderFileService(fileAbsolutePath);
 
             var suppliersProducts = inputProcessor.getProductsForSuppliers();
 
